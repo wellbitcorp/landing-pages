@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELLBIT | Saúde Mental e Performance Corporativa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #80D8D8;
+            --primary-dark: #2C5F63;
+            --accent: #FFD700;
+            --light: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark: #333333;
+            --danger: #FF6B6B;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--light);
+            padding: 20px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--light);
+        }
+        
+        .header-cta {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .header-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--light);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--light);
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-cta {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hero-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .countdown {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .countdown-box {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin: 0 5px;
+            min-width: 80px;
+        }
+        
+        .countdown-value {
+            font-size: 28px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .countdown-label {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+        
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        
+        .stat-box {
+            background-color: var(--light-gray);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin-bottom: 20px;
+            flex-basis: calc(50% - 20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-box:hover {
+            transform: translateX(5px);
+        }
+        
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--danger);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .stat-description {
+            font-size: 16px;
+        }
+        
+        .stat-source {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .nr1-alert {
+            background-color: var(--primary-dark);
+            color: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .nr1-alert h3 {
+            color: var(--light);
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .nr1-alert p {
+            margin-bottom: 15px;
+        }
+        
+        .nr1-highlight {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        
+        /* Solution Section */
+        .solution {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .meta-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        
+        .meta-box {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            flex-basis: calc(50% - 15px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .meta-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .meta-letter {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .meta-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .app-preview {
+            background-color: var(--light);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .app-preview h3 {
+            margin-bottom: 30px;
+        }
+        
+        .app-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .app-feature {
+            flex-basis: calc(33.333% - 20px);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            background-color: var(--primary);
+            color: var(--primary-dark);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 30px;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .benefits-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .benefit-column {
+            flex-basis: calc(50% - 20px);
+        }
+        
+        .benefit-box {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .benefit-icon {
+            background-color: var(--primary);
+            color: var(--primary-dark);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 20px;
+        }
+        
+        .benefit-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        .chart-container {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        .chart-container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        /* Testimonials Section */
+        .vision {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+            text-align: center;
+        }
+        
+        .vision-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .vision-quote {
+            font-size: 24px;
+            font-style: italic;
+            position: relative;
+            padding: 20px 40px;
+            margin-bottom: 20px;
+        }
+        
+        .vision-quote:before {
+            content: '"';
+            font-family: 'Montserrat', sans-serif;
+            font-size: 80px;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            top: -20px;
+            left: 0;
+        }
+        
+        .vision-author {
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .pricing-box {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 40px;
+            margin: 0 15px 30px;
+            flex-basis: calc(33.333% - 30px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-popular {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 8px 40px;
+            transform: rotate(45deg);
+            font-size: 14px;
+        }
+        
+        .pricing-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .pricing-price {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .pricing-period {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .pricing-description {
+            margin-bottom: 20px;
+            min-height: 80px;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+            min-height: 200px;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-cta {
+            background-color: var(--primary);
+            color: var(--primary-dark);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .pricing-cta:hover {
+            transform: scale(1.05);
+            background-color: var(--accent);
+        }
+        
+        .pricing-featured {
+            border: 3px solid var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .pricing-featured .pricing-cta {
+            background-color: var(--accent);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: var(--light);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 1000px;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--light);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            color: var(--light);
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+        
+        .cta-main {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cta-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .guarantee-icon {
+            font-size: 40px;
+            margin-right: 20px;
+            color: var(--accent);
+        }
+        
+        .guarantee-text {
+            text-align: left;
+        }
+        
+        .guarantee-text h3 {
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: var(--light);
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        
+        .copyright {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .stat-box, .meta-box {
+                flex-basis: 100%;
+            }
+            
+            .app-feature {
+                flex-basis: 100%;
+            }
+            
+            .benefit-column {
+                flex-basis: 100%;
+            }
+            
+            .pricing-box {
+                flex-basis: 100%;
+                margin: 0 0 30px;
+            }
+            
+            .pricing-featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <svg viewBox="0 0 60 60" width="60" height="60">
+                    <!-- Nuvem -->
+                    <path d="M30,16 C36,16 40,20 44,20 C52,20 56,26 56,32 C56,38 52,44 44,44 C40,44 36,40 30,40 C24,40 20,44 16,44 C8,44 4,38 4,32 C4,26 8,20 16,20 C20,20 24,16 30,16" fill="#80D8D8" stroke="#2C5F63" stroke-width="2"/>
+                    <!-- Olhos e boca -->
+                    <path d="M20,28 C22,28 22,30 20,30 C18,30 18,28 20,28" fill="#2C5F63"/>
+                    <path d="M40,28 C42,28 42,30 40,30 C38,30 38,28 40,28" fill="#2C5F63"/>
+                    <path d="M30,32 C34,32 36,34 36,36 C36,38 34,38 30,38 C26,38 24,38 24,36 C24,34 26,32 30,32" fill="#2C5F63"/>
+                    <!-- Estrela -->
+                    <path d="M50,24 L52,28 L56,29 L53,32 L54,36 L50,34 L46,36 L47,32 L44,29 L48,28 Z" fill="#FFD700"/>
+                </svg>
+                <span class="logo-text">WELLBIT</span>
+            </div>
+            <a href="#pricing" class="header-cta">SOLICITAR DEMONSTRAÇÃO</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Transforme Saúde Mental em Vantagem Competitiva</h1>
+            <p>A plataforma gamificada que prepara sua empresa para a NR1 Psicossocial enquanto eleva produtividade e reduz absenteísmo.</p>
+            <a href="#pricing" class="hero-cta">QUERO CONHECER A SOLUÇÃO</a>
+            <!--
+            <div class="countdown">
+                <p>Oferta de lançamento expira em:</p>
+                <div class="countdown-timer">
+                    <div class="countdown-box">
+                        <div class="countdown-value">14</div>
+                        <div class="countdown-label">dias</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-value">08</div>
+                        <div class="countdown-label">horas</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-value">45</div>
+                        <div class="countdown-label">minutos</div>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <div class="section-title">
+                <h2>O Desafio que Sua Empresa Enfrenta</h2>
+                <p>Os problemas de saúde mental estão custando caro para as empresas brasileiras</p>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-value">76%</div>
+                    <div class="stat-description">dos profissionais relatam sintomas de burnout no ambiente corporativo</div>
+                    <div class="stat-source">Fonte: Pesquisa Global de Saúde Mental no Trabalho, 2024</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-value">R$ 23.500</div>
+                    <div class="stat-description">é o custo anual por colaborador com problemas de saúde mental</div>
+                    <div class="stat-source">Fonte: Associação Brasileira de Psiquiatria, 2024</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-value">32%</div>
+                    <div class="stat-description">de aumento no presenteísmo nos últimos 3 anos</div>
+                    <div class="stat-source">Fonte: Relatório de Produtividade Corporativa, 2024</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-value">41%</div>
+                    <div class="stat-description">dos gestores não se sentem preparados para lidar com questões de saúde mental</div>
+                    <div class="stat-source">Fonte: Pesquisa de Liderança e Bem-estar, 2024</div>
+                </div>
+            </div>
+            
+            <div class="nr1-alert">
+                <h3>NR1 Psicossocial: Você Está Preparado?</h3>
+                <p>A partir de <span class="nr1-highlight">maio de 2026</span>, todas as empresas com empregados em regime CLT deverão cumprir as exigências da NR1 Psicossocial.</p>
+                <p>Não espere para se adequar. Empresas que se antecipam não apenas evitam multas, mas ganham vantagem competitiva.</p>
+                <a href="#solution" class="hero-cta">CONHEÇA A SOLUÇÃO</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution" id="solution">
+        <div class="container">
+            <div class="section-title">
+                <h2>A Solução WELLBIT</h2>
+                <p>Metodologia M.E.T.A. (Método de Educação Transformacional Autônomo)</p>
+            </div>
+            
+            <div class="meta-container">
+                <div class="meta-box">
+                    <div class="meta-letter">M</div>
+                    <h3 class="meta-title">Maturidade Emocional</h3>
+                    <p>Desenvolvimento de inteligência emocional e resiliência para enfrentar desafios do ambiente corporativo, fortalecendo o tônus interno dos colaboradores.</p>
+                </div>
+                
+                <div class="meta-box">
+                    <div class="meta-letter">E</div>
+                    <h3 class="meta-title">Educação Contínua</h3>
+                    <p>Aprendizado progressivo e personalizado para cada colaborador, com conteúdos baseados em neurociência e psicologia positiva.</p>
+                </div>
+                
+                <div class="meta-box">
+                    <div class="meta-letter">T</div>
+                    <h3 class="meta-title">Transformação Sustentável</h3>
+                    <p>Mudanças duradouras em vez de soluções temporárias, criando uma cultura organizacional que valoriza e promove a saúde mental.</p>
+                </div>
+                
+                <div class="meta-box">
+                    <div class="meta-letter">A</div>
+                    <h3 class="meta-title">Autonomia Individual</h3>
+                    <p>Fortalecimento do tônus interno em vez de dependência externa, empoderando os colaboradores a gerenciar seu próprio bem-estar.</p>
+                </div>
+            </div>
+            
+            <div class="app-preview">
+                <h3>Plataforma Gamificada para Engajamento Contínuo</h3>
+                <p>Inspirada nos princípios da gamificação, nossa plataforma transforma o desenvolvimento psicoemocional em uma jornada envolvente e motivadora.</p>
+                
+                <div class="app-features">
+                    <div class="app-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h4>Gamificação Engajadora</h4>
+                        <p>Sistema de pontos, níveis e conquistas que mantém os colaboradores motivados.</p>
+                    </div>
+                    
+                    <div class="app-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Métricas em Tempo Real</h4>
+                        <p>Dashboard com indicadores de progresso individual e coletivo para gestores.</p>
+                    </div>
+                    
+                    <div class="app-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Conteúdo Personalizado</h4>
+                        <p>Algoritmo que adapta os desafios ao perfil e necessidades de cada colaborador.</p>
+                    </div>
+                    
+                    <div class="app-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Desafios em Equipe</h4>
+                        <p>Atividades colaborativas que fortalecem o espírito de equipe e a comunicação.</p>
+                    </div>
+                    
+                    <div class="app-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Conformidade NR1</h4>
+                        <p>Documentação e evidências para atender às exigências regulatórias.</p>
+                    </div>
+                    
+                    <div class="app-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h4>Desenvolvimento de Líderes</h4>
+                        <p>Módulos específicos para gestores se tornarem referências por exemplo.</p>
+                    </div>
+                </div>
+                
+                <a href="#pricing" class="hero-cta">QUERO IMPLEMENTAR NA MINHA EMPRESA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Benefícios para Sua Empresa</h2>
+                <p>Transforme saúde mental em resultados tangíveis</p>
+            </div>
+            
+            <div class="benefits-container">
+                <div class="benefit-column">
+                    <div class="benefit-box">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Redução do Absenteísmo</h3>
+                            <p>Potencial de redução de até 35% nas faltas relacionadas à saúde mental após 6 meses de implementação.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-box">
+                        <div class="benefit-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Aumento da Produtividade</h3>
+                            <p>Expectativa de incremento de até 23% na produtividade dos colaboradores que utilizam a plataforma regularmente.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-box">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Engajamento e Retenção</h3>
+                            <p>Projeção de redução de até 27% na rotatividade de pessoal e aumento de até 41% no engajamento dos colaboradores.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="benefit-column">
+                    <div class="benefit-box">
+                        <div class="benefit-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Conformidade Regulatória</h3>
+                            <p>Preparação completa para atender às exigências da NR1 Psicossocial, evitando multas e penalidades.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-box">
+                        <div class="benefit-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Vantagem Competitiva</h3>
+                            <p>Diferenciação no mercado como empresa que valoriza e investe na saúde mental de seus colaboradores.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-box">
+                        <div class="benefit-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>ROI Mensurável</h3>
+                            <p>Retorno sobre investimento claro e mensurável, com dashboard de métricas e indicadores de impacto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3>Impacto Potencial em Indicadores-Chave</h3>
+                <canvas id="resultsChart" height="300"></canvas>
+                <p class="stat-source text-center mt-3">Projeções baseadas em estudos do setor sobre intervenções de saúde mental corporativa</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision" id="vision">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa Visão</h2>
+            </div>
+            
+            <div class="vision-content">
+                <div class="vision-quote">
+                    "Acreditamos que a saúde mental não deve criar dependência, mas sim fortalecer a autonomia dos colaboradores. Nossa abordagem é fundamentada na ciência da Somologia e orientada a resultados mensuráveis para as empresas."
+                </div>
+                <p class="vision-author">— Fundadores da WELLBIT</p>
+                
+                <p class="mt-5">O WELLBIT é mais do que um aplicativo: é um movimento de transformação que une ciência, filosofia e prática para desenvolver pessoas mais autônomas, líderes mais conscientes e empresas mais fortes.</p>
+                
+                <a href="#pricing" class="hero-cta mt-5">FAÇA PARTE DESSA TRANSFORMAÇÃO</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section 
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Invista em Saúde Mental e Performance</h2>
+                <p>Escolha o plano ideal para sua empresa</p>
+            </div>
+            
+            <div class="pricing-container">
+                <div class="pricing-box">
+                    <h3 class="pricing-title">Plano Starter</h3>
+                    <div class="pricing-price">
+                        R$ 1.990<span class="pricing-period">/mês</span>
+                    </div>
+                    <p class="pricing-description">Ideal para pequenas empresas que desejam iniciar sua jornada de saúde mental.</p>
+                    
+                    <ul class="pricing-features">
+                        <li>Até 50 colaboradores</li>
+                        <li>Acesso à plataforma gamificada</li>
+                        <li>Dashboard básico de métricas</li>
+                        <li>Suporte por e-mail</li>
+                        <li>Relatório trimestral de conformidade NR1</li>
+                        <li>1 workshop de liderança (online)</li>
+                    </ul>
+                    
+                    <a href="#" class="pricing-cta">SOLICITAR DEMONSTRAÇÃO</a>
+                </div>
+                
+                <div class="pricing-box pricing-featured">
+                    <div class="pricing-popular">MAIS POPULAR</div>
+                    <h3 class="pricing-title">Plano Business</h3>
+                    <div class="pricing-price">
+                        R$ 3.990<span class="pricing-period">/mês</span>
+                    </div>
+                    <p class="pricing-description">Solução completa para empresas de médio porte com necessidades avançadas.</p>
+                    
+                    <ul class="pricing-features">
+                        <li>Até 200 colaboradores</li>
+                        <li>Acesso à plataforma gamificada</li>
+                        <li>Dashboard avançado de métricas</li>
+                        <li>Suporte prioritário</li>
+                        <li>Relatório mensal de conformidade NR1</li>
+                        <li>4 workshops de liderança (2 presenciais)</li>
+                        <li>Personalização de conteúdo</li>
+                        <li>Integração com sistemas de RH</li>
+                    </ul>
+                    
+                    <a href="#" class="pricing-cta">SOLICITAR DEMONSTRAÇÃO</a>
+                </div>
+                
+                <div class="pricing-box">
+                    <h3 class="pricing-title">Plano Enterprise</h3>
+                    <div class="pricing-price">
+                        Personalizado
+                    </div>
+                    <p class="pricing-description">Solução sob medida para grandes corporações com necessidades específicas.</p>
+                    
+                    <ul class="pricing-features">
+                        <li>Colaboradores ilimitados</li>
+                        <li>Acesso à plataforma gamificada</li>
+                        <li>Dashboard personalizado</li>
+                        <li>Gerente de conta dedicado</li>
+                        <li>Relatórios personalizados</li>
+                        <li>Workshops ilimitados</li>
+                        <li>Personalização completa</li>
+                        <li>API para integração total</li>
+                        <li>Consultoria estratégica</li>
+                    </ul>
+                    
+                    <a href="#" class="pricing-cta">AGENDAR REUNIÃO</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Como a WELLBIT ajuda na conformidade com a NR1 Psicossocial?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A WELLBIT fornece toda a documentação necessária para comprovar a gestão de riscos psicossociais exigida pela NR1. Nossa plataforma gera relatórios detalhados sobre as ações implementadas, participação dos colaboradores e evolução dos indicadores, facilitando o processo de auditoria e conformidade regulatória.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quanto tempo leva para implementar a plataforma?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O processo de implementação leva em média 2 a 4 semanas, dependendo do tamanho da empresa e do nível de personalização desejado. Iniciamos com um diagnóstico, seguido pela configuração da plataforma, treinamento de líderes e onboarding dos colaboradores. Nossa equipe acompanha todo o processo para garantir uma adoção suave e eficaz.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Como a WELLBIT se diferencia de outras soluções de saúde mental?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A principal diferença da WELLBIT está na nossa abordagem baseada na Metodologia M.E.T.A., que foca no desenvolvimento de autonomia em vez de criar dependência. Enquanto outras soluções tratam apenas os sintomas, nós fortalecemos o tônus interno dos colaboradores. Além disso, nossa plataforma gamificada gera engajamento contínuo e oferece métricas claras de ROI para a empresa.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>É possível personalizar o conteúdo para nossa empresa?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, oferecemos diferentes níveis de personalização dependendo do plano escolhido. No plano Business, é possível personalizar parte do conteúdo para refletir os valores e desafios específicos da sua empresa. No plano Enterprise, oferecemos personalização completa, incluindo conteúdo, design e funcionalidades exclusivas para atender às necessidades específicas da sua organização.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Como medir o retorno sobre o investimento (ROI)?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A WELLBIT fornece um dashboard completo com métricas de impacto nos principais indicadores de negócio, como absenteísmo, presenteísmo, rotatividade e produtividade. Realizamos medições antes da implementação para estabelecer uma linha base e acompanhamos a evolução ao longo do tempo. Além disso, oferecemos relatórios periódicos que traduzem esses indicadores em valores financeiros, permitindo calcular o ROI de forma clara e objetiva.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Transforme Sua Empresa Hoje</h2>
+            <p>Não espere até 2026 para se adequar à NR1 Psicossocial. Antecipe-se e transforme esse desafio em uma oportunidade para melhorar a saúde mental e a performance da sua equipe.</p>
+            
+            <a href="#" class="cta-main">AGENDAR DEMONSTRAÇÃO GRATUITA</a>
+            
+            <div class="guarantee">
+                <div class="guarantee-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="guarantee-text">
+                    <h3>Garantia de Satisfação</h3>
+                    <p>Se após 30 dias você não estiver satisfeito com os resultados, devolvemos seu investimento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <svg viewBox="0 0 60 60" width="40" height="40">
+                    <!-- Nuvem -->
+                    <path d="M30,16 C36,16 40,20 44,20 C52,20 56,26 56,32 C56,38 52,44 44,44 C40,44 36,40 30,40 C24,40 20,44 16,44 C8,44 4,38 4,32 C4,26 8,20 16,20 C20,20 24,16 30,16" fill="#80D8D8" stroke="#FFFFFF" stroke-width="2"/>
+                    <!-- Olhos e boca -->
+                    <path d="M20,28 C22,28 22,30 20,30 C18,30 18,28 20,28" fill="#FFFFFF"/>
+                    <path d="M40,28 C42,28 42,30 40,30 C38,30 38,28 40,28" fill="#FFFFFF"/>
+                    <path d="M30,32 C34,32 36,34 36,36 C36,38 34,38 30,38 C26,38 24,38 24,36 C24,34 26,32 30,32" fill="#FFFFFF"/>
+                    <!-- Estrela -->
+                    <path d="M50,24 L52,28 L56,29 L53,32 L54,36 L50,34 L46,36 L47,32 L44,29 L48,28 Z" fill="#FFD700"/>
+                </svg>
+                <span class="logo-text">WELLBIT</span>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#problem">O Desafio</a>
+                <a href="#solution">Nossa Solução</a>
+                <a href="#benefits">Benefícios</a>
+                <a href="#pricing">Planos</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 WELLBIT. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Chart
+        const ctx = document.getElementById('resultsChart').getContext('2d');
+        const resultsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Absenteísmo', 'Presenteísmo', 'Rotatividade', 'Engajamento', 'Produtividade'],
+                datasets: [{
+                    label: 'Linha Base',
+                    data: [100, 100, 100, 100, 100],
+                    backgroundColor: '#FF6B6B',
+                    borderColor: '#FF6B6B',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Potencial após 6 meses',
+                    data: [65, 58, 73, 141, 123],
+                    backgroundColor: '#80D8D8',
+                    borderColor: '#2C5F63',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                if (context.datasetIndex === 0) {
+                                    return 'Linha base: 100%';
+                                } else {
+                                    const value = context.raw;
+                                    if (context.dataIndex < 3) { // Absenteísmo, Presenteísmo, Rotatividade
+                                        return `Potencial de redução para ${value}% (${100-value}% de melhoria)`;
+                                    } else { // Engajamento, Produtividade
+                                        return `Potencial de aumento para ${value}% (${value-100}% de melhoria)`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Índice (Base 100%)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
